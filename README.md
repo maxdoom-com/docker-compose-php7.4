@@ -14,3 +14,16 @@ You might copy these conventient-files as well:
 - shell ... opens a shell in the web host
 - run ... runs the whole docker project
 - stop ... stops the whole docker project
+
+
+Access
+========================================================================
+
+- Adminer: https://adminer.localhost.direct/?server=database&username=root&db=db (Password: `dontaskme`)
+- Website: https://localhost.direct/
+
+
+Predefined database condig
+========================================================================
+
+See your .env - file.
