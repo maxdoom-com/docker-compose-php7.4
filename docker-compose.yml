@@ -10,7 +10,6 @@ services:
             - ./html/:/srv/index/
             - ./etc/custom/php.ini:/etc/php7/conf.d/custom-php.ini
             - ./etc/custom/apache.conf:/etc/apache2/conf.d/custom-apache.conf
-            - ./etc/vhosts.d/:/etc/apache2/conf.d/vhosts.d/
 #    database:
 #        build: docker-containers/mariadb10
 #        env_file: .env
