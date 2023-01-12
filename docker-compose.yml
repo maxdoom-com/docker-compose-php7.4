@@ -1,0 +1,27 @@
+version: "3"
+services:
+    application:
+        build: docker-containers/apache-php7-python3
+        env_file: .env
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./html/:/srv/index/
+            - ./etc/custom/php.ini:/etc/php7/conf.d/custom-php.ini
+            - ./etc/custom/apache.conf:/etc/apache2/conf.d/custom-apache.conf
+            - ./etc/vhosts.d/:/etc/apache2/conf.d/vhosts.d/
+    database:
+        build: docker-containers/mariadb10
+        env_file: .env
+        ports:
+            - "3306:3306"
+        restart: unless-stopped
+        volumes:
+            - ./mysql:/var/lib/mysql
+            - ./etc/custom/mariadb.conf:/etc/my.cnf.d/custom-mariadb.conf
+    mailcatcher:
+        build: docker-containers/mailcatcher
+        env_file: .env
+        ports:
+            - "25:25"
