@@ -43,14 +43,14 @@ RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.13/c
 ENV LD_PRELOAD /usr/lib/preloadable_libiconv.so
 
 
-COPY home_you /home/you
-COPY srv_ssl /srv/ssl
-COPY srv_adminer /srv/adminer
-COPY etc_apache2_conf.d_vhosts.d /etc/apache2/conf.d/vhosts.d
+COPY home/you /home/you
+COPY srv/ssl /srv/ssl
+COPY srv/adminer /srv/adminer
+COPY etc/apache2/conf.d/vhosts.d /etc/apache2/conf.d/vhosts.d
 
 RUN ln -s /usr/lib/libxml2.so.2 /usr/lib/libxml2.so
 # Syntax error on line 13 of /etc/apache2/conf.d/proxy-html.conf:
 # Cannot load /usr/lib/libxml2.so into server: Error loading shared library /usr/lib/libxml2.so: No such file or directory
 
-ADD ["boot.sh", "/sbin/"]
+ADD ["sbin/boot.sh", "/sbin/"]
 ENTRYPOINT ["/bin/sh", "/sbin/boot.sh"]
