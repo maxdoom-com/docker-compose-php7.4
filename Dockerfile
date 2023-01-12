@@ -46,7 +46,7 @@ ENV LD_PRELOAD /usr/lib/preloadable_libiconv.so
 COPY home_you /home/you
 COPY srv_ssl /srv/ssl
 COPY srv_adminer /srv/adminer
-COPY etc_vhosts.d /etc/vhosts.d
+COPY etc_apache2_vhosts.d /etc/apache2/vhosts.d
 
 RUN ln -s /usr/lib/libxml2.so.2 /usr/lib/libxml2.so
 # Syntax error on line 13 of /etc/apache2/conf.d/proxy-html.conf:
