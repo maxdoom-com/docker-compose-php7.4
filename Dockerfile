@@ -36,7 +36,9 @@ RUN apk add \
     php7-bcmath         \
     php7-opcache        \
     php7-pecl-apcu      \
-    php7-ctype          #
+    php7-ctype          \
+    python3             \
+    py3-virtualenv      #
 
 # fix a dompdf problem...
 RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.13/community/ gnu-libiconv=1.15-r3
