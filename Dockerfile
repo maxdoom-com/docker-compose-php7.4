@@ -38,6 +38,7 @@ RUN apk add \
     php7-opcache        \
     php7-pecl-apcu      \
     php7-ctype          \
+    php7-ldap           \
     python3             \
     py3-virtualenv      #
 
